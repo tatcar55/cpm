@@ -1,0 +1,63 @@
+/*    */ package com.sun.xml.ws.tx.coord.v11.endpoint;
+/*    */ 
+/*    */ import com.sun.xml.ws.tx.at.WSATHelper;
+/*    */ import com.sun.xml.ws.tx.coord.common.endpoint.RegistrationRequester;
+/*    */ import javax.xml.ws.WebServiceContext;
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ public class RegistrationRequesterImpl
+/*    */   extends RegistrationRequester
+/*    */ {
+/*    */   public RegistrationRequesterImpl(WebServiceContext m_context) {
+/* 51 */     super(m_context);
+/*    */   }
+/*    */   
+/*    */   protected WSATHelper getWSATHelper() {
+/* 55 */     return WSATHelper.V11;
+/*    */   }
+/*    */ }
+
+
+/* Location:              C:\Users\carlos\Documents\InnoExtractor\Cyber Password Manager 1_0\{app}\cpm_1.0.jar!\com\sun\xml\ws\tx\coord\v11\endpoint\RegistrationRequesterImpl.class
+ * Java compiler version: 6 (50.0)
+ * JD-Core Version:       1.1.3
+ */

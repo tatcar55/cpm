@@ -1,0 +1,62 @@
+/*    */ package com.sun.xml.rpc.encoding.simpletype;
+/*    */ 
+/*    */ import javax.activation.DataHandler;
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ public class SourceAttachmentEncoder
+/*    */   implements AttachmentEncoder
+/*    */ {
+/* 36 */   private static final AttachmentEncoder encoder = new SourceAttachmentEncoder();
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */   
+/*    */   public static AttachmentEncoder getInstance() {
+/* 43 */     return encoder;
+/*    */   }
+/*    */   
+/*    */   public DataHandler objectToDataHandler(Object obj) throws Exception {
+/* 47 */     DataHandler dataHandler = new DataHandler(obj, "text/xml");
+/*    */     
+/* 49 */     return dataHandler;
+/*    */   }
+/*    */ 
+/*    */   
+/*    */   public Object dataHandlerToObject(DataHandler dataHandler) throws Exception {
+/* 54 */     return dataHandler.getContent();
+/*    */   }
+/*    */ }
+
+
+/* Location:              C:\Users\carlos\Documents\InnoExtractor\Cyber Password Manager 1_0\{app}\cpm_1.0.jar!\com\sun\xml\rpc\encoding\simpletype\SourceAttachmentEncoder.class
+ * Java compiler version: 5 (49.0)
+ * JD-Core Version:       1.1.3
+ */

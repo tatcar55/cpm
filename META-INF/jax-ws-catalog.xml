@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://172.17.1.135/CNT.WS.ActiveDirectory/CNT.WS.ActiveDirectory.asmx?WSDL" uri="wsdl/172.17.1.135/CNT.WS.ActiveDirectory/CNT.WS.ActiveDirectory.asmx.wsdl"/>
+</catalog>

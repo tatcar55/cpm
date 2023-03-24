@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio web CNT.WS.ActiveDirectory que permite autentificación de usuarios y consulta de información</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="conectar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conectarEntrada" type="tns:conectarRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="conectarRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="conectarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conectarResult" type="tns:datosUsuarioResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="datosUsuarioResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRetorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeRetorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="tns:usuario" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="usuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCorto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroIdentificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoEmpleado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="conectar2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conectarEntrada" type="tns:conectarRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="conectar2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conectar2Result" type="tns:datosUsuarioResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarUsuarioEntrada" type="tns:datosUsuarioRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="datosUsuarioRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoUsuario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarUsuarioResult" type="tns:datosUsuarioResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="conectarSoapIn">
+    <wsdl:part name="parameters" element="tns:conectar" />
+  </wsdl:message>
+  <wsdl:message name="conectarSoapOut">
+    <wsdl:part name="parameters" element="tns:conectarResponse" />
+  </wsdl:message>
+  <wsdl:message name="conectar2SoapIn">
+    <wsdl:part name="parameters" element="tns:conectar2" />
+  </wsdl:message>
+  <wsdl:message name="conectar2SoapOut">
+    <wsdl:part name="parameters" element="tns:conectar2Response" />
+  </wsdl:message>
+  <wsdl:message name="consultarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="consultarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ActiveDirectorySoap">
+    <wsdl:operation name="conectar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Autentificacion del usuario en el Active Directory</wsdl:documentation>
+      <wsdl:input message="tns:conectarSoapIn" />
+      <wsdl:output message="tns:conectarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="conectar2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Autentificacion del usuario en el Active Directory</wsdl:documentation>
+      <wsdl:input message="tns:conectar2SoapIn" />
+      <wsdl:output message="tns:conectar2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta información del usuario desde el Active Directory</wsdl:documentation>
+      <wsdl:input message="tns:consultarUsuarioSoapIn" />
+      <wsdl:output message="tns:consultarUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ActiveDirectorySoap" type="tns:ActiveDirectorySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="conectar">
+      <soap:operation soapAction="http://tempuri.org/conectar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conectar2">
+      <soap:operation soapAction="http://tempuri.org/conectar2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUsuario">
+      <soap:operation soapAction="http://tempuri.org/consultarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ActiveDirectorySoap12" type="tns:ActiveDirectorySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="conectar">
+      <soap12:operation soapAction="http://tempuri.org/conectar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conectar2">
+      <soap12:operation soapAction="http://tempuri.org/conectar2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/consultarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ActiveDirectory">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio web CNT.WS.ActiveDirectory que permite autentificación de usuarios y consulta de información</wsdl:documentation>
+    <wsdl:port name="ActiveDirectorySoap" binding="tns:ActiveDirectorySoap">
+      <soap:address location="http://172.17.1.135/CNT.WS.ActiveDirectory/CNT.WS.ActiveDirectory.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ActiveDirectorySoap12" binding="tns:ActiveDirectorySoap12">
+      <soap12:address location="http://172.17.1.135/CNT.WS.ActiveDirectory/CNT.WS.ActiveDirectory.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+package com.sun.xml.rpc.soap.streaming;
+
+import com.sun.xml.rpc.spi.tools.SOAPNamespaceConstants;
+
+public class SOAPNamespaceConstants implements SOAPNamespaceConstants {
+  public static final String ENCODING = "http://schemas.xmlsoap.org/soap/encoding/";
+  
+  public static final String XSD = "http://www.w3.org/2001/XMLSchema";
+  
+  public static final String XSI = "http://www.w3.org/2001/XMLSchema-instance";
+  
+  public static final String XMLNS = "http://www.w3.org/XML/1998/namespace";
+  
+  public static final String TRANSPORT_HTTP = "http://schemas.xmlsoap.org/soap/http/";
+  
+  public static final String ACTOR_NEXT = "http://schemas.xmlsoap.org/soap/actor/next";
+  
+  public static final String TAG_ENVELOPE = "Envelope";
+  
+  public static final String TAG_HEADER = "Header";
+  
+  public static final String TAG_BODY = "Body";
+  
+  public static final String ATTR_ACTOR = "actor";
+  
+  public static final String ATTR_MUST_UNDERSTAND = "mustUnderstand";
+  
+  public static final String ATTR_ENCODING_STYLE = "encodingStyle";
+}
+
+
+/* Location:              C:\Users\carlos\Documents\InnoExtractor\Cyber Password Manager 1_0\{app}\cpm_1.0.jar!\com\sun\xml\rpc\soap\streaming\SOAPNamespaceConstants.class
+ * Java compiler version: 5 (49.0)
+ * JD-Core Version:       1.1.3
+ */
